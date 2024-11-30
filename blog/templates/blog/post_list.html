@@ -1,15 +1,23 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Django Girls blog</title>
+        <header class="page-header">
+    <div class="container">
+        <h1><a href="/">Django Girls Blog</a></h1>
+    </div>
+</header>
     </head>
-    <body>
-        {% for post in posts %}
-    <article>
-        <time>published: {{ post.published_date }}</time>
-        <h2><a href="">{{ post.title }}</a></h2>
-        <p>{{ post.text|linebreaksbr }}</p>
-    </article>
-{% endfor %}
+     <body>
+      
+        <main>
+            {% for post in posts %}
+                <article>
+                    <time>published: {{ post.published_date }}</time>
+                    <h2><a href="">{{ post.title }}</a></h2>
+                    <p>{{ post.text|linebreaksbr }}</p>
+                </article>
+            {% endfor %}
+        </main>
     </body>
 </html>
